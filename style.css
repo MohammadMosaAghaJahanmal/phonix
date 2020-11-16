@@ -969,7 +969,7 @@ form button:hover
     position: absolute;
     width: 200px;
     top: 56px;
-    left: 420px;
+    left: -30px;
     background-color: white;
     box-shadow: 0 5px 8px rgba(0,0,0,0.15);
     display: grid;
@@ -1000,6 +1000,10 @@ ul li:hover > .product-drop-down
 .bag:hover .drop-down-menu
 {
     display: grid;
+}
+.relative
+{
+    position: relative;
 }
 @media all and (max-width: 1710px)
 {

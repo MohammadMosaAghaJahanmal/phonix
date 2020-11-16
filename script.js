@@ -57,6 +57,35 @@ window.onresize = (e) =>
 }
 
 if (cards.length > 0) {   
+    const rounded_one = document.querySelector(".rounded:first-child");
+    const rounded_two = document.querySelector(".rounded:last-child");
+
+    
+    rounded_one.onclick = () =>
+    {
+        rounded_two.setAttribute("class", "rounded");
+        rounded_one.setAttribute("class", "rounded active-round");
+        a = 0;
+        for (const card of cards) {
+            card.style.transform = `translate3d(-${a}px, 0, 0)`;
+        }
+    }
+    rounded_two.onclick = () =>
+    {
+        rounded_one.setAttribute("class", "rounded");
+        rounded_two.setAttribute("class", "rounded active-round");
+        if (window.innerWidth <= 560) {
+            
+            a = 1760;
+        }else
+        {
+            a = 915;
+        }
+        for (const card of cards) {
+            card.style.transform = `translate3d(-${a}px, 0, 0)`;
+        }
+    }
+    
     setInterval(() =>
     {
         if (window.innerWidth <= 560) {
@@ -65,15 +94,30 @@ if (cards.length > 0) {
             if (a == 3520) {
                 a = 0;
             }
+            if (a <= 1760) {
+                rounded_one.setAttribute("class", "rounded");
+                rounded_two.setAttribute("class", "rounded active-round");
+            }
+            if (a < 1760) {
+                rounded_two.setAttribute("class", "rounded");
+                rounded_one.setAttribute("class", "rounded active-round");
+            }
         }else
         {
             a += 305;
-
+            
             if (a == 1525) {
                 a = 0;
             }
+            if (a == 915) {
+                rounded_one.setAttribute("class", "rounded");
+                rounded_two.setAttribute("class", "rounded active-round");
+            }
+            if (a < 610) {
+                rounded_two.setAttribute("class", "rounded");
+                rounded_one.setAttribute("class", "rounded active-round");
+            }
         }
-        console.log
         for (const card of cards) {
             card.style.transform = `translate3d(-${a}px, 0, 0)`;
         }

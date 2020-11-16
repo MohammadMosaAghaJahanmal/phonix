@@ -859,7 +859,10 @@ form button:hover
 {
     display: grid;
     grid-template-columns: auto 1fr;
-    
+    margin: 0 20px;
+    padding: 0 20px;
+    transition: 200ms;
+    transform: translate3d(0, 0, 0);
 }
 .free-shipping
 {
@@ -868,17 +871,20 @@ form button:hover
     border: 1px solid var(--border-light);
     margin: 10px;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(6, 380px);
     justify-content: space-between;
     margin-bottom: 50px;
+    overflow: hidden;
+    width: 1100px;
+    margin: 0 auto;
     
     
 }
 .free-shipping .free-card:nth-child(2)
 {
-    border-right:1px solid var(--border-light) ;
-    padding: 0 60px;
-    border-left:1px solid var(--border-light) ;
+    /* border-right:1px solid var(--border-light) ; */
+    /* padding: 0 60px; */
+    /* border-left:1px solid var(--border-light) ; */
 }
 .free-card :first-child
 {
@@ -970,6 +976,13 @@ form button:hover
     .card-footer
     {
         left: 33px;
+    }
+}
+@media all and (max-width: 1178px)
+{
+    .free-shipping
+    {
+        width: 700px;
     }
 }
 
@@ -1075,7 +1088,7 @@ form button:hover
     {
         left: 33px;
     }
-    .free-shipping
+    /* .free-shipping
     {
         
         padding: 20px 30px;
@@ -1085,12 +1098,12 @@ form button:hover
         grid-template-columns: 1fr;
         justify-content: center;
         
-    }
-    .free-shipping .free-card:nth-child(2)
+    } */
+    /* .free-shipping .free-card:nth-child(2)
     {
         padding:20px 0;
         border: 0;
-    }
+    } */
     
 }
 @media screen and (max-width: 880px)
@@ -1107,6 +1120,14 @@ form button:hover
         justify-content: center;
         align-items: center;
         margin-bottom: 30px;
+    }
+
+}
+@media screen and (max-width: 780px)
+{
+    .free-shipping
+    {
+        width: 340px;
     }
 
 }

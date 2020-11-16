@@ -54,6 +54,9 @@ window.onresize = (e) =>
         }
     }
     a = 0
+    for (const card of cards) {
+        card.style.transform = `translate3d(-${a}px, 0, 0)`;
+    }
 }
 
 if (cards.length > 0) {   
@@ -123,3 +126,16 @@ if (cards.length > 0) {
         }
     }, 3000)
 }
+
+const guran = document.querySelectorAll(".free-card");
+b = 0;
+setInterval(() =>
+{
+    b += 380
+    if (b >= 1520) {
+        b = 0;
+    }
+    for (const guarantee of guran) {
+        guarantee.style.transform = `translate3d(-${b}px, 0, 0)`;
+    }
+}, 3000)

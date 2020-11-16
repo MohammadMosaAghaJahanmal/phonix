@@ -1,6 +1,3 @@
-
-
-
 const menu = document.querySelector("#menuOpen")
 menu.onchange = function(e)
 {
@@ -32,11 +29,6 @@ menu.onchange = function(e)
         bool = true
 
     }
-    
-    
-    
-    
-    
 }
 
 
@@ -58,6 +50,9 @@ window.onresize = (e) =>
         card.style.transform = `translate3d(-${a}px, 0, 0)`;
     }
 }
+
+
+
 
 if (cards.length > 0) {   
     const rounded_one = document.querySelector(".rounded:first-child");
@@ -126,6 +121,8 @@ if (cards.length > 0) {
         }
     }, 3000)
 }
+
+
 
 const guran = document.querySelectorAll(".free-card");
 b = 0;

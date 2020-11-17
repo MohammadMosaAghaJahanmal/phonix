@@ -37,19 +37,18 @@ let a = 0;
 window.onresize = (e) =>
 {
 
-    const tableTd = document.querySelectorAll(".cart-list table tbody td");
-
-    // if (tableTd.length > 0) {
-    //     if (window.innerWidth >= 560) {
-    //         for (const perTd of tableTd) {
-    //             perTd.setAttribute("style", '6');
-    //         }
-    //     }
-    // }
 
     if(window.innerWidth >=1092)
     {
-        menu.checked = false;
+        const drop_dwon_responsive = document.querySelector("#responsiveDropDown");
+        if(drop_dwon_responsive)
+        {
+            drop_dwon_responsive.checked = false;
+        }
+        if(menu)
+        {
+            menu.checked = false;
+        }
         const black = document.querySelector(".black-page")
         if(black)
         {

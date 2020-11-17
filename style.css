@@ -799,7 +799,7 @@ form button:hover
     border-top: 1px solid rgb(48, 48, 48);
     font-size: 12px;
 }
-.nav-bar > ul li a:hover, .nav-bar > ul li a.active
+ .nav-bar > ul li a.active
 {
     background-color: rgba(97, 97, 97, 0.2);
 
@@ -881,12 +881,6 @@ form button:hover
     margin-bottom: 50px;
     
     
-}
-.free-shipping .free-card:nth-child(2)
-{
-    /* border-right:1px solid var(--border-light) ; */
-    /* padding: 0 60px; */
-    /* border-left:1px solid var(--border-light) ; */
 }
 .free-card :first-child
 {
@@ -1702,6 +1696,53 @@ hr
     display: grid !important;
 }
 
+.responsive-drop-down
+{
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('./images/arrow-down-sign-to-navigate.png');
+    background-position: center;
+    z-index: 9;
+    position: absolute;
+    right: 5px !important;
+    top: 12px !important;
+    opacity: .7;
+}
+.nav-bar-product + div :first-child
+{
+    display: none;
+}
+.nav-bar-product + div 
+{
+    padding: 0 10px;
+}
+.nav-bar-product + div a
+{
+    color: var(--bg-light);
+}
+.responsive-drop-down
+{
+    transition: 500ms;
+    transform: rotateZ(0);
+}
+#responsiveDropDown ~ div
+{
+    height: 0;
+    overflow: hidden;
+    transition: 500ms;
+}
+#responsiveDropDown:checked ~ div
+{
+    height: 205px;
+    display: block;
+}
+#responsiveDropDown:checked ~ .responsive-drop-down
+{
+    transform: rotateZ(180deg);
+
+}
 @media all and (max-width: 1710px)
 {
     .mx-auto
@@ -1916,6 +1957,7 @@ hr
     {
         grid-template-columns: 1fr;
     }
+    
     
 }
 @media screen and (max-width: 880px)

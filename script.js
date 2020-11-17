@@ -36,6 +36,17 @@ const cards = document.querySelectorAll(".home-page .slider-card");
 let a = 0;
 window.onresize = (e) =>
 {
+
+    const tableTd = document.querySelectorAll(".cart-list table tbody td");
+
+    // if (tableTd.length > 0) {
+    //     if (window.innerWidth >= 560) {
+    //         for (const perTd of tableTd) {
+    //             perTd.setAttribute("style", '6');
+    //         }
+    //     }
+    // }
+
     if(window.innerWidth >=1092)
     {
         menu.checked = false;
@@ -136,3 +147,58 @@ setInterval(() =>
         guarantee.style.transform = `translate3d(-${b}px, 0, 0)`;
     }
 }, 3000)
+
+const wishTitle = document.querySelector(".whish-title");
+
+if (wishTitle) {
+    const btn = document.querySelector(".edit-title-btn")
+    const buttons = document.querySelector(".edit-cancel-btn")
+    
+    btn.onclick = () =>
+    {
+        wishTitle.focus();
+        clickHandler()
+    }
+    wishTitle.onblur = () =>
+    {
+        btn.style.display = "inline-block";
+        buttons.style.display = "none"
+    }
+    wishTitle.onfocus = () =>
+    {
+        clickHandler()
+    }
+    
+    function clickHandler() {
+        btn.style.display = "none";
+        buttons.style.display = "flex"
+    }
+}
+
+
+let itemsInput = document.querySelector("#items")
+
+
+if (itemsInput) {
+    let mignus = document.querySelector("#mignus")
+    let add = document.querySelector("#add")
+
+    mignus.onclick = () =>
+    {
+        let numberValue = Number.parseInt(itemsInput.value);
+        if (numberValue < 1) {
+            itemsInput.value = 0;
+            
+        }else
+        {
+            itemsInput.value = --numberValue;
+        }
+    }
+    add.onclick = () =>
+    {
+        let numberValue = Number.parseInt(itemsInput.value);
+        itemsInput.value = ++numberValue;
+    }
+    
+}
+

@@ -200,10 +200,3 @@ if (itemsInput) {
     }
     
 }
-
-
-
-re.onchange = (e) =>
-{
-    console.log(re.checked)
-}

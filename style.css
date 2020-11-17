@@ -1382,6 +1382,7 @@ hr
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
     padding: 15px 10px;
+    align-items: center;
 }
 .cart-total-amount p
 {
